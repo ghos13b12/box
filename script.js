@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       htmlContent += `<div class="section-divider">adultes</div>`;
 
       // Première section : Patients 1 à 15 (adultes)
-      const adultGroup = rows.slice(1, 15);
+      const adultGroup = rows.slice(2, 15);
       htmlContent += adultGroup.map(row => {
         const [box, nom, date] = row.c.map(cell => cell?.v || "");
         const statusClass = getStatusClass(date);
