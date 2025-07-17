@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       htmlContent += `<div class="section-divider">adultes</div>`;
 
       // Première section : Patients 1 à 15 (adultes)
-      const adultGroup = rows.slice(0, 14);
+      const adultGroup = rows.slice(0, 15);
       htmlContent += adultGroup.map(row => {
         const [box, nom, date] = row.c.map(cell => cell?.v || "");
         const statusClass = getStatusClass(date);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
 
       // Ajouter le titre "enfants" et la section enfants
-      const childrenGroup = rows.slice(14, 20);
+      const childrenGroup = rows.slice(16, 20);
       if (childrenGroup.length > 0) {
         htmlContent += `<div class="section-divider">enfants</div>`;
         htmlContent += childrenGroup.map(row => {
