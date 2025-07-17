@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const SHEET_ID = "1qP34VnnoJgxTX3rdont0mlpvpzApgmobklKx5soJvio";
   const GID = "0";
   const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${GID}`;
-  const REFRESH_INTERVAL = 10000;
+  const REFRESH_INTERVAL = 5000;
   const patientGrid = document.getElementById('patient-grid');
 
   const getStatusClass = (dateStr) => {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       htmlContent += `<div class="section-divider">adultes</div>`;
 
       // Première section : Patients 1 à 15 (adultes)
-      const adultGroup = rows.slice(2, 15);
+      const adultGroup = rows.slice(1, 15);
       htmlContent += adultGroup.map(row => {
         const [box, nom, date] = row.c.map(cell => cell?.v || "");
         const statusClass = getStatusClass(date);
